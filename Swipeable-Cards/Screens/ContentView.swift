@@ -20,7 +20,8 @@ struct ContentView: View {
         GeometryReader { geometry in
           VStack {
             Button {
-              
+
+              print(RandomDeck.shared.returnNonRepeatedRandomNums)
               
             } label: {
               HeaderView()
@@ -32,7 +33,7 @@ struct ContentView: View {
                 
                 if (cardData.maxID - 2)...cardData.maxID ~= card.id {
                   CardView(card: card, onRemove: { removedCard in
-                    
+                    print("removed \(card.id)")
                     cardData.cards.removeAll { $0.id == removedCard.id }
                    })
                   .animation(.spring()) 

@@ -9,9 +9,10 @@ import SwiftUI
 
 struct CardView: View {
   
-  @StateObject var cardData = CardData()
-  @State var randomCard = Int.random(in: 0..<52)
+  @State var randomCard = Int.random(in: 0...51)
   @State private var translation: CGSize = .zero
+  @State var randomDeck = RandomDeck.shared.returnNonRepeatedRandomNums
+
   
   var card: Card
   var onRemove: (_ card: Card) -> Void
@@ -27,13 +28,13 @@ struct CardView: View {
     GeometryReader { geometry in
       
       VStack(alignment: .center) {
-        Image(card.imageName)
+        Image(card.imageAndRules[randomCard].imageName)
           .resizable()
           .scaledToFit()
           .frame(width: geometry.size.width, height: geometry.size.height * 1.08)
           .clipped()
         
-        FooterView(rule: card.rule)
+        FooterView(rule: card.imageAndRules[randomCard].rule)
       }
       .background(Color.white)
       .cornerRadius(12)
@@ -47,6 +48,7 @@ struct CardView: View {
             self.translation = value.translation
           }.onEnded { value in
             if abs(self.getGesturePercentage(geometry, from: value)) > self.thresholdPercentage {
+              randomCard = Int.random(in: 0...51, excluding: randomCard)
               self.onRemove(self.card)
             } else {
               self.translation = .zero
@@ -63,10 +65,10 @@ struct CardView: View {
 }
 
 
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-      CardView(card: Card(id: 0, imageName: "2_of_clubs", rule: Rules.rule2), onRemove: { _ in
-        
-}).frame(height: 400).padding()
-    }
-}
+//struct CardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//      CardView(card: Card(id: 0, imageName: "2_of_clubs", rule: Rules.rule2), onRemove: { _ in
+//
+//}).frame(height: 400).padding()
+//    }
+//}
