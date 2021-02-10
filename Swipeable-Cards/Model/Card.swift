@@ -9,13 +9,15 @@ import Foundation
 import SwiftUI
 
 
+
+
 struct ImageAndRule: Equatable {
   
   var imageName: String
   var rule: String
 }
 
-struct Card: Hashable, Identifiable {
+class Card: Hashable, Identifiable {
   
   static func == (lhs: Card, rhs: Card) -> Bool {
     lhs.imageAndRules == rhs.imageAndRules
@@ -27,61 +29,71 @@ struct Card: Hashable, Identifiable {
   func hash(into hasher: inout Hasher) {
     hasher.combine(id)
   }
-//  var description: String {
-//    return "\(imageName), id: \(id)"
-//  }
   
   init(id: Int) {
     self.id = id
     
-    imageAndRules = [ImageAndRule(imageName: "ace_of_spades", rule: Rules.ruleAce),
+    imageAndRules = [
                      ImageAndRule(imageName: "jack_of_hearts2", rule: Rules.ruleJack),
                      ImageAndRule(imageName: "jack_of_clubs2", rule: Rules.ruleJack),
                      ImageAndRule(imageName: "jack_of_diamonds2", rule: Rules.ruleJack),
                      ImageAndRule(imageName: "jack_of_spades2", rule: Rules.ruleJack),
+      
                      ImageAndRule(imageName: "3_of_clubs", rule: Rules.rule3),
                      ImageAndRule(imageName: "3_of_hearts", rule: Rules.rule3),
                      ImageAndRule(imageName: "3_of_diamonds", rule: Rules.rule3),
                      ImageAndRule(imageName: "3_of_spades", rule: Rules.rule3),
+      
                      ImageAndRule(imageName: "4_of_clubs", rule: Rules.rule4),
                      ImageAndRule(imageName: "4_of_hearts", rule: Rules.rule4),
                      ImageAndRule(imageName: "4_of_diamonds", rule: Rules.rule4),
                      ImageAndRule(imageName: "4_of_spades", rule: Rules.rule4),
+      
                      ImageAndRule(imageName: "5_of_clubs", rule: Rules.rule5),
                      ImageAndRule(imageName: "5_of_hearts", rule: Rules.rule5),
                      ImageAndRule(imageName: "5_of_diamonds", rule: Rules.rule5),
                      ImageAndRule(imageName: "5_of_spades", rule: Rules.rule5),
+      
                      ImageAndRule(imageName: "6_of_clubs", rule: Rules.rule6),
                      ImageAndRule(imageName: "6_of_hearts", rule: Rules.rule6),
                      ImageAndRule(imageName: "6_of_diamonds", rule: Rules.rule6),
                      ImageAndRule(imageName: "6_of_spades", rule: Rules.rule6),
+      
                      ImageAndRule(imageName: "7_of_clubs", rule: Rules.rule7),
                      ImageAndRule(imageName: "7_of_hearts", rule: Rules.rule7),
                      ImageAndRule(imageName: "7_of_diamonds", rule: Rules.rule7),
                      ImageAndRule(imageName: "7_of_spades", rule: Rules.rule7),
+      
                      ImageAndRule(imageName: "8_of_clubs", rule: Rules.rule8),
                      ImageAndRule(imageName: "8_of_hearts", rule: Rules.rule8),
                      ImageAndRule(imageName: "8_of_diamonds", rule: Rules.rule8),
                      ImageAndRule(imageName: "8_of_spades", rule: Rules.rule8),
+      
                      ImageAndRule(imageName: "9_of_clubs", rule: Rules.rule9),
                      ImageAndRule(imageName: "9_of_hearts", rule: Rules.rule9),
                      ImageAndRule(imageName: "9_of_diamonds", rule: Rules.rule9),
                      ImageAndRule(imageName: "9_of_spades", rule: Rules.rule9),
+      
                      ImageAndRule(imageName: "king_of_clubs2", rule: Rules.ruleKing),
                      ImageAndRule(imageName: "king_of_hearts2", rule: Rules.ruleKing),
                      ImageAndRule(imageName: "king_of_diamonds2", rule: Rules.ruleKing),
                      ImageAndRule(imageName: "king_of_spades2", rule: Rules.ruleKing),
+      
                      ImageAndRule(imageName: "queen_of_clubs2", rule: Rules.ruleQueen),
                      ImageAndRule(imageName: "queen_of_hearts2", rule: Rules.ruleQueen),
                      ImageAndRule(imageName: "queen_of_diamonds2", rule: Rules.ruleQueen),
                      ImageAndRule(imageName: "queen_of_spades2", rule: Rules.ruleQueen),
+      
+                     ImageAndRule(imageName: "ace_of_spades", rule: Rules.ruleAce),
                      ImageAndRule(imageName: "ace_of_clubs", rule: Rules.ruleAce),
                      ImageAndRule(imageName: "ace_of_hearts", rule: Rules.ruleAce),
                      ImageAndRule(imageName: "ace_of_diamonds", rule: Rules.ruleAce),
+      
                      ImageAndRule(imageName: "2_of_clubs", rule: Rules.rule2),
                      ImageAndRule(imageName: "2_of_hearts", rule: Rules.rule2),
                      ImageAndRule(imageName: "2_of_spades", rule: Rules.rule2),
                      ImageAndRule(imageName: "2_of_diamonds", rule: Rules.rule2),
+      
                      ImageAndRule(imageName: "10_of_clubs", rule: Rules.rule10),
                      ImageAndRule(imageName: "10_of_hearts", rule: Rules.rule10),
                      ImageAndRule(imageName: "10_of_spades", rule: Rules.rule10),
@@ -91,6 +103,33 @@ struct Card: Hashable, Identifiable {
  
 }
 
+
+class UsedImages: ObservableObject {
+  
+  var count: Int = 1
+  
+  var returnNonRepeatedRandomNums: [Int] {
+    var nonRepeatedRandomNums: [Int] = []
+    
+    var r = Int.random(in: 0...51)
+    for _ in 0...51 {
+      r = Int.random(in: 0...51, excluding: r)
+      nonRepeatedRandomNums.append(r)
+    }
+    
+    return nonRepeatedRandomNums
+  }
+  
+  @Published var images: [String] = []
+  
+  func addImage(image: String) {
+    self.images.append(image)
+  }
+  
+  func addToCount() {
+    self.count += 1
+  }
+}
 
 class CardData: ObservableObject {
   

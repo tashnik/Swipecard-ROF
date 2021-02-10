@@ -9,17 +9,19 @@ import SwiftUI
 
 struct CardView: View {
   
-  @State var randomCard = Int.random(in: 0...51)
+  var randomCard: Int
+  
   @State private var translation: CGSize = .zero
-  @State var randomDeck = RandomDeck.shared.returnNonRepeatedRandomNums
-
+  
+  @EnvironmentObject var usedImages: UsedImages
   
   var card: Card
   var onRemove: (_ card: Card) -> Void
   var thresholdPercentage: CGFloat = 0.5
   
-  init(card: Card, onRemove: @escaping (_ card: Card) -> Void) {
+  init(card: Card, randomCard: Int, onRemove: @escaping (_ card: Card) -> Void) {
     self.card = card
+    self.randomCard = randomCard
     self.onRemove = onRemove
   }
   
@@ -46,15 +48,17 @@ struct CardView: View {
         DragGesture()
           .onChanged { value in
             self.translation = value.translation
+            
           }.onEnded { value in
             if abs(self.getGesturePercentage(geometry, from: value)) > self.thresholdPercentage {
-              randomCard = Int.random(in: 0...51, excluding: randomCard)
+            
               self.onRemove(self.card)
             } else {
               self.translation = .zero
             }
           }
       )
+     
     }
     .padding()
   }

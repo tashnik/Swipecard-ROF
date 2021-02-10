@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Swipeable_CardsApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  
+  var usedImages = UsedImages()
+  
+  var body: some Scene {
+    WindowGroup {
+      ContentView().environmentObject(usedImages)
     }
+  }
 }
