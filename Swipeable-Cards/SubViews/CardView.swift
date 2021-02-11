@@ -29,35 +29,41 @@ struct CardView: View {
     
     GeometryReader { geometry in
       
-      VStack(alignment: .center) {
-        Image(card.imageAndRules[randomCard].imageName)
-          .resizable()
-          .scaledToFit()
-          .frame(width: geometry.size.width, height: geometry.size.height * 1.08)
-          .clipped()
-        
-        FooterView(rule: card.imageAndRules[randomCard].rule)
-      }
-      .background(Color.white)
-      .cornerRadius(12)
-      .shadow(radius: 5)
-      .animation(.interactiveSpring())
-      .offset(x: self.translation.width, y: 0)
-      .rotationEffect(.degrees(Double(self.translation.width / geometry.size.width) * 25), anchor: .bottom)
-      .gesture(
-        DragGesture()
-          .onChanged { value in
-            self.translation = value.translation
-            
-          }.onEnded { value in
-            if abs(self.getGesturePercentage(geometry, from: value)) > self.thresholdPercentage {
-            
-              self.onRemove(self.card)
-            } else {
-              self.translation = .zero
+        VStack(alignment: .center) {
+          Image(card.imageAndRules[randomCard].imageName)
+            .resizable()
+            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+            .frame(width: geometry.size.width, height: geometry.size.height * 1.15)
+            .clipped()
+          
+          FooterView(rule: card.imageAndRules[randomCard].rule)
+        }
+        .background(Color.white)
+        .cornerRadius(12)
+        .shadow(radius: 5)
+        .animation(.interactiveSpring())
+        .offset(x: self.translation.width, y: 0)
+        .rotationEffect(.degrees(Double(self.translation.width / geometry.size.width) * 25), anchor: .bottom)
+        .gesture(
+          DragGesture()
+            .onChanged { value in
+              self.translation = value.translation
+              
+            }.onEnded { value in
+              if abs(self.getGesturePercentage(geometry, from: value)) > self.thresholdPercentage {
+              
+                usedImages.images.append(card.imageAndRules[randomCard].imageName)
+                usedImages.rules.append(card.imageAndRules[randomCard].rule)
+                
+                print(usedImages.images)
+                
+                self.onRemove(self.card)
+              } else {
+                self.translation = .zero
+              }
             }
-          }
       )
+      
      
     }
     .padding()
@@ -69,10 +75,10 @@ struct CardView: View {
 }
 
 
-//struct CardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//      CardView(card: Card(id: 0, imageName: "2_of_clubs", rule: Rules.rule2), onRemove: { _ in
-//
-//}).frame(height: 400).padding()
-//    }
-//}
+struct CardView_Previews: PreviewProvider {
+    static var previews: some View {
+      CardView(card: Card(id: 0), randomCard: 0, onRemove: { _ in
+
+}).frame(height: 400).padding()
+    }
+}

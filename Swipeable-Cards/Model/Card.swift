@@ -9,8 +9,6 @@ import Foundation
 import SwiftUI
 
 
-
-
 struct ImageAndRule: Equatable {
   
   var imageName: String
@@ -104,32 +102,7 @@ class Card: Hashable, Identifiable {
 }
 
 
-class UsedImages: ObservableObject {
-  
-  var count: Int = 1
-  
-  var returnNonRepeatedRandomNums: [Int] {
-    var nonRepeatedRandomNums: [Int] = []
-    
-    var r = Int.random(in: 0...51)
-    for _ in 0...51 {
-      r = Int.random(in: 0...51, excluding: r)
-      nonRepeatedRandomNums.append(r)
-    }
-    
-    return nonRepeatedRandomNums
-  }
-  
-  @Published var images: [String] = []
-  
-  func addImage(image: String) {
-    self.images.append(image)
-  }
-  
-  func addToCount() {
-    self.count += 1
-  }
-}
+
 
 class CardData: ObservableObject {
   
@@ -137,6 +110,9 @@ class CardData: ObservableObject {
       return self.cards.map { $0.id }.max() ?? 0
   }
   
+  init() {
+    
+  }
   
   @Published var cards: [Card] = [
     Card(id: 0),

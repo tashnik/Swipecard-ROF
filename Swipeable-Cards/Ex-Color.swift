@@ -17,5 +17,9 @@ extension Color {
   static var fireColor: Color {
     Color("fireColor")
   }
+  
+  static var neonGreen: Color {
+    Color("neonGreen")
+  }
 }
 

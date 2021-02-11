@@ -10,9 +10,13 @@ import SwiftUI
 struct ContentView: View {
   
   @StateObject var cardData = CardData()
-  @State var count = 0
+  @State var count = 1
+  @State var kingCount = 0
   @State var randomCard = Int.random(in: 0...51)
   @State var randomCards: [Int] = []
+  @State var showAlert = false
+  
+  @EnvironmentObject var usedImages: UsedImages
   
   var body: some View {
   
@@ -22,36 +26,59 @@ struct ContentView: View {
       VStack {
         GeometryReader { geometry in
           VStack {
-            Button {
-
-              print(RandomDeck.shared.returnNonRepeatedRandomNums)
-              
-            } label: {
-              HeaderView()
-                .padding(.horizontal)
-            }
            
             ZStack {
+              VStack {
+                HStack {
+                  Image("cardBack_red4")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 360, height: 500, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .padding(.trailing)
+                  
+                  Spacer()
+                }
+                Spacer()
+                  .frame(height: 15)
+              }
+              .padding()
+              .alert(isPresented: $showAlert, content: {
+                Alert(title: Text("No more cards!"), message: Text("Play again?"), primaryButton: .default(Text("I'm still sober"), action: {
+                  let newCardData = CardData()
+                  cardData.cards = newCardData.cards
+                  usedImages.startNewGame = true
+                  randomCards = uniqueRandoms(numberOfRandoms: 52, minNum: 0, maxNum: 51)
+                  randomCard = randomCards[0]
+                  print("Start again")
+                }), secondaryButton: .cancel())
+              })
+              
               ForEach(cardData.cards) { card in
                 
                 if (cardData.maxID - 0)...cardData.maxID ~= card.id {
+                  
                   CardView(card: card, randomCard: randomCard, onRemove: { removedCard in
-          //          print("removed \(card.id)  \(cardData.cards.count)")
+         
                     cardData.cards.removeAll { $0.id == removedCard.id
                     }
                     
                     if count <= 51 {
                       randomCard = randomCards[count]
                       count += 1
+                    } else {
+                      showAlert = true
+                      count = 1
+                      usedImages.images.removeAll()
                     }
                     
-                    print(card.imageAndRules[randomCard].imageName)
                 
                    })
-                  .animation(.spring()) 
-                  .frame(width: self.getCardWidth(geometry, id: card.id), height: 500)
+                  .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
+                  .transition(.move(edge: .leading))
+                  .frame(width: self.getCardWidth(geometry, id: card.id), height: 480)
                   .offset(x: 0, y: self.getCardOffset(geometry, id: card.id))
                   .padding(.bottom)
+                  .padding(.trailing, 25)
                 }
               }
             }
@@ -59,10 +86,16 @@ struct ContentView: View {
         }
       }
       .padding()
+      
     }
     .onAppear {
-      randomCards = uniqueRandoms(numberOfRandoms: 52, minNum: 0, maxNum: 51)
+      if usedImages.startNewGame {
+        randomCards = uniqueRandoms(numberOfRandoms: 52, minNum: 0, maxNum: 51)
+        randomCard = randomCards[0]
+      }
+      
     }
+    
   }
   
   ///MARK:  FUNCTIONS

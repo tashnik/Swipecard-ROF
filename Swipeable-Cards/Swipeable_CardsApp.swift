@@ -14,7 +14,7 @@ struct Swipeable_CardsApp: App {
   
   var body: some Scene {
     WindowGroup {
-      ContentView().environmentObject(usedImages)
+      GameTabView().environmentObject(usedImages)
     }
   }
 }

@@ -14,11 +14,13 @@ struct HeaderView: View {
     VStack {
       HStack(spacing: 3) {
         VStack(alignment: .center) {
-          Text("Ring of...")
-            .font(.custom("Copperplate-Bold", size: 26))
+          Text("Ring of Fire")
+            .font(.custom("Copperplate-Bold", size: 22))
             .bold()
             .foregroundColor(.red)
         }
+        
+        Spacer()
         
         Image(systemName: "flame.fill")
           .resizable()
@@ -39,7 +41,7 @@ struct HeaderView: View {
           .frame(width: 40, height: 40)
           .foregroundColor(.red)
         
-        Spacer()
+        
       }
       .padding()
     }
