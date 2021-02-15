@@ -14,16 +14,14 @@ struct FooterView: View {
   var rule: String
   
   var body: some View {
-    VStack(alignment: .center, spacing: 6) {
+    VStack(alignment: .leading) {
       Text(rule)
-        .font(.callout)
-        .fontWeight(.medium)
+        .font(.title2)
+        .fontWeight(.bold)
         .frame(height: 125)
-        .foregroundColor(.black)
+        .foregroundColor(.white)
         .minimumScaleFactor(0.5)
-    
     }
-    .padding(.horizontal)
   }
 }
 

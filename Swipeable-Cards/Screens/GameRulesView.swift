@@ -17,7 +17,7 @@ struct GameRulesView: View {
         HeaderView()
           .padding()
         
-        Text("Ring of Fire drinking game is popular among students and those people who like partying in sleepovers. Having a variation of drinks makes this game fun and it is even more fun when the group is bigger.")
+        Text("Ring of Fire is a popular drinking game among students and those people who like partying in sleepovers. Having a variation of drinks makes this game fun and it is even more fun when the group is bigger.")
           .font(.title2)
           .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
           .foregroundColor(.white)

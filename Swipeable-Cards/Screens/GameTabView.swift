@@ -13,11 +13,13 @@ struct GameTabView: View {
   
   var body: some View {
     TabView {
-      ContentView()
-        .tabItem {
-          Image(systemName: "house")
-          Text("Game")
-        }
+      NavigationView {
+        ContentView()
+      }
+      .tabItem {
+        Image(systemName: "circles.hexagonpath")
+        Text("Game")
+      }
       
       NavigationView {
         UsedCardsView()

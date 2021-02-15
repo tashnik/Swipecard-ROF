@@ -18,7 +18,7 @@ struct UsedCardsView: View {
   
   var body: some View {
     ZStack {
-      LinearGradient(gradient: Gradient(colors: [colorScheme == .light ? Color.neonGreen : Color.cardTableGreen, Color.black]), startPoint: .topLeading, endPoint: .bottomTrailing)
+      LinearGradient(gradient: Gradient(colors: [Color.cardTableGreen, Color.black]), startPoint: .topLeading, endPoint: .bottomTrailing)
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
       ScrollView(showsIndicators: false) {
         LazyVGrid(columns: columns) {
@@ -43,7 +43,8 @@ struct UsedCardsView: View {
     .onAppear {
         usedImages.startNewGame = false
     }
-    .navigationBarTitle("Used Cards").foregroundColor(.white)
+    .navigationBarTitle("Used Cards")
+    .navigationBarTitleDisplayMode(.inline)
   }
 }
 

@@ -29,14 +29,18 @@ struct CardView: View {
     
     GeometryReader { geometry in
       
+      ZStack {
+        Image("cardBack_red4")
+          .resizable()
+          .frame(width: geometry.size.width * 0.98, height: geometry.size.height * 1.11)
+        
         VStack(alignment: .center) {
           Image(card.imageAndRules[randomCard].imageName)
             .resizable()
             .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-            .frame(width: geometry.size.width, height: geometry.size.height * 1.15)
-            .clipped()
+            .frame(width: geometry.size.width * 0.98, height: geometry.size.height * 1.11)
+      //      .clipped()
           
-          FooterView(rule: card.imageAndRules[randomCard].rule)
         }
         .background(Color.white)
         .cornerRadius(12)
@@ -51,23 +55,23 @@ struct CardView: View {
               
             }.onEnded { value in
               if abs(self.getGesturePercentage(geometry, from: value)) > self.thresholdPercentage {
-              
+                
                 usedImages.images.append(card.imageAndRules[randomCard].imageName)
                 usedImages.rules.append(card.imageAndRules[randomCard].rule)
-                
-                print(usedImages.images)
                 
                 self.onRemove(self.card)
               } else {
                 self.translation = .zero
               }
             }
-      )
+        )
+      }
       
-     
     }
     .padding()
   }
+  
+  ///MARK: FUNCTIONS
   
   private func getGesturePercentage(_ geometry: GeometryProxy, from gesture: DragGesture.Value) -> CGFloat {
     gesture.translation.width / geometry.size.width
@@ -76,9 +80,9 @@ struct CardView: View {
 
 
 struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-      CardView(card: Card(id: 0), randomCard: 0, onRemove: { _ in
-
-}).frame(height: 400).padding()
-    }
+  static var previews: some View {
+    CardView(card: Card(id: 0), randomCard: 0, onRemove: { _ in
+      
+    }).frame(height: 480).padding()
+  }
 }
