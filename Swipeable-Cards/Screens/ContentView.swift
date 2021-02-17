@@ -82,7 +82,7 @@ struct ContentView: View {
             .padding(.trailing)
         }
         .alert(isPresented: $showAlert, content: {
-          Alert(title: Text("Shuffle the deck"), message: Text("Restart the game?"), primaryButton: .default(Text("Yes"), action: {
+          Alert(title: Text("Restart"), message: Text("Shuffle the deck and start over?"), primaryButton: .default(Text("Yes"), action: {
             let newCardData = CardData()
             cardData.cards = newCardData.cards
             usedImages.startNewGame = true
@@ -92,7 +92,6 @@ struct ContentView: View {
             randomCard = randomCards[0]
             currentRule = cardData.cards[randomCard].imageAndRules[randomCard].rule
             count = 1
-    //        showImageAndRule.toggle()
           
           }), secondaryButton: .default(Text("No")))
         })
@@ -108,7 +107,7 @@ struct ContentView: View {
                             showAlert.toggle()
                             
                           } label: {
-                            Text("Shuffle")
+                            Text("Restart")
                               .foregroundColor(Color.black)
                           }
                           .frame(width: 70, height: 35)

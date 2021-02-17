@@ -18,6 +18,7 @@
 		2A54F99E25D5C43900715CB0 /* RulesSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54F99D25D5C43900715CB0 /* RulesSheetView.swift */; };
 		2A7029A325D0B4D100CF6B0F /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7029A225D0B4D100CF6B0F /* FooterView.swift */; };
 		2A7029A625D0B80F00CF6B0F /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7029A525D0B80F00CF6B0F /* HeaderView.swift */; };
+		2A83E0B625DBFD9600C3578C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A83E0B525DBFD9600C3578C /* Launch Screen.storyboard */; };
 		2AE687AC25D08A63003CB910 /* Swipeable_CardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE687AB25D08A63003CB910 /* Swipeable_CardsApp.swift */; };
 		2AE687AE25D08A63003CB910 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE687AD25D08A63003CB910 /* ContentView.swift */; };
 		2AE687B025D08A6A003CB910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AE687AF25D08A6A003CB910 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		2A54F99D25D5C43900715CB0 /* RulesSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesSheetView.swift; sourceTree = "<group>"; };
 		2A7029A225D0B4D100CF6B0F /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		2A7029A525D0B80F00CF6B0F /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		2A83E0B525DBFD9600C3578C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		2AE687A825D08A63003CB910 /* Swipeable-Cards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swipeable-Cards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AE687AB25D08A63003CB910 /* Swipeable_CardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swipeable_CardsApp.swift; sourceTree = "<group>"; };
 		2AE687AD25D08A63003CB910 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				2AE687AD25D08A63003CB910 /* ContentView.swift */,
+				2A83E0B525DBFD9600C3578C /* Launch Screen.storyboard */,
 				2A54F99125D589B800715CB0 /* GameTabView.swift */,
 				2A54F99425D5912300715CB0 /* UsedCardsView.swift */,
 				2A54F99725D5925D00715CB0 /* GameRulesView.swift */,
@@ -189,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A83E0B625DBFD9600C3578C /* Launch Screen.storyboard in Resources */,
 				2AE687B325D08A6A003CB910 /* Preview Assets.xcassets in Resources */,
 				2AE687B025D08A6A003CB910 /* Assets.xcassets in Resources */,
 			);
