@@ -20,7 +20,7 @@ struct Rules {
   static let rule9 = "Rhyme Thyme! 🎤 Think of a word then go around the circle rhyming that word until someone messes up and has to drink."
   static let rule10 = "Categories! 🧞‍♂️ Go around the circle naming things belonging to a category until someone messes up and has to drink."
   static let ruleJack = "Maketh a rule! 📣 Anyone who breaks the rule at any time throughout the rest of the game has to drink."
-  static let ruleQueen = "Queen of Questions! 💁‍♀️ If anybody answers a question asked by you, they have to drink. (e.g \"huh?\")."
+  static let ruleQueen = "Queen of Questions!  If anybody answers a question asked by you, they have to drink. (e.g \"huh?\")."
   static let ruleKing = "🤴 Poureth a quarter of your drink into the King's Chalice."
   static let ruleAce = "Waterfall! 🌊 Every player continually drinks their drink and can only stop when the person to their right has stopped."
 }
