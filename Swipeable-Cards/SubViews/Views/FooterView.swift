@@ -12,22 +12,26 @@ struct FooterView: View {
   @StateObject var cardData = CardData()
   
   var rule: String
+  var height: CGFloat
   
   var body: some View {
-    VStack(alignment: .leading) {
+    VStack {
       Text(rule)
-        .font(.title2)
+        .font(.largeTitle)
         .fontWeight(.bold)
-        .frame(height: 125)
+        .frame(height: height)
         .foregroundColor(.white)
-        .minimumScaleFactor(0.5)
+        .minimumScaleFactor(0.3)
+        .multilineTextAlignment(.center)
+        .padding(.trailing)
     }
+//    .padding(.top, 15)
   }
 }
 
 struct FooterView_Previews: PreviewProvider {
   static var previews: some View {
-    FooterView(rule: "Rule goes here")
+    FooterView(rule: "Rule goes here", height: 80)
   }
 }
 

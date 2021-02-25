@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A060B7725DD880500914A6B /* EditRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A060B7625DD880500914A6B /* EditRulesView.swift */; };
+		2A060B7E25E0276200914A6B /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A060B7D25E0276200914A6B /* XDismissButton.swift */; };
 		2A087EA725D3225F00DE56B4 /* Ex-Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A087EA625D3225F00DE56B4 /* Ex-Int.swift */; };
 		2A087EAA25D32A3300DE56B4 /* RandomDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A087EA925D32A3300DE56B4 /* RandomDeck.swift */; };
 		2A25031A25D1904C00D190BD /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A25031925D1904C00D190BD /* Rules.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A060B7625DD880500914A6B /* EditRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRulesView.swift; sourceTree = "<group>"; };
+		2A060B7D25E0276200914A6B /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
 		2A087EA625D3225F00DE56B4 /* Ex-Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex-Int.swift"; sourceTree = "<group>"; };
 		2A087EA925D32A3300DE56B4 /* RandomDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDeck.swift; sourceTree = "<group>"; };
 		2A25031925D1904C00D190BD /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
@@ -61,6 +65,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A060B7B25E0273400914A6B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A7029A525D0B80F00CF6B0F /* HeaderView.swift */,
+				2A7029A225D0B4D100CF6B0F /* FooterView.swift */,
+				2AE687BB25D08B97003CB910 /* CardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A060B7C25E0274200914A6B /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				2A060B7D25E0276200914A6B /* XDismissButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		2A25031C25D1905500D190BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				2AE687AD25D08A63003CB910 /* ContentView.swift */,
+				2A060B7625DD880500914A6B /* EditRulesView.swift */,
 				2A83E0B525DBFD9600C3578C /* Launch Screen.storyboard */,
 				2A54F99125D589B800715CB0 /* GameTabView.swift */,
 				2A54F99425D5912300715CB0 /* UsedCardsView.swift */,
@@ -88,9 +111,8 @@
 		2A25032225D1920500D190BD /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				2A7029A525D0B80F00CF6B0F /* HeaderView.swift */,
-				2A7029A225D0B4D100CF6B0F /* FooterView.swift */,
-				2AE687BB25D08B97003CB910 /* CardView.swift */,
+				2A060B7C25E0274200914A6B /* Buttons */,
+				2A060B7B25E0273400914A6B /* Views */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -207,6 +229,7 @@
 			files = (
 				2AE687AE25D08A63003CB910 /* ContentView.swift in Sources */,
 				2A54F99825D5925D00715CB0 /* GameRulesView.swift in Sources */,
+				2A060B7E25E0276200914A6B /* XDismissButton.swift in Sources */,
 				2A7029A625D0B80F00CF6B0F /* HeaderView.swift in Sources */,
 				2AE687BC25D08B97003CB910 /* CardView.swift in Sources */,
 				2A54F99E25D5C43900715CB0 /* RulesSheetView.swift in Sources */,
@@ -215,6 +238,7 @@
 				2A7029A325D0B4D100CF6B0F /* FooterView.swift in Sources */,
 				2A25031A25D1904C00D190BD /* Rules.swift in Sources */,
 				2A54F99B25D59E2B00715CB0 /* UsedImages.swift in Sources */,
+				2A060B7725DD880500914A6B /* EditRulesView.swift in Sources */,
 				2A54F99525D5912300715CB0 /* UsedCardsView.swift in Sources */,
 				2AE687AC25D08A63003CB910 /* Swipeable_CardsApp.swift in Sources */,
 				2A54F99225D589B800715CB0 /* GameTabView.swift in Sources */,
@@ -360,7 +384,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Potashnik.Swipeable-Cards";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -382,7 +406,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Potashnik.Swipeable-Cards";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

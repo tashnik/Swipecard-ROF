@@ -30,9 +30,8 @@ struct UsedCardsView: View {
                 Image(item.0)
                   .resizable()
                   .scaledToFit()
-                  .frame(width: 175, height: 175, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                  .frame(width: 160, height: 160, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                   .padding()
-                  
               })
              
           }

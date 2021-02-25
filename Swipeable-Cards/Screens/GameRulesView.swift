@@ -17,7 +17,7 @@ struct GameRulesView: View {
         HeaderView()
           .padding()
         
-        Text("Ring of Fire is a popular drinking game among students and those people who like partying in sleepovers. Having a variation of drinks makes this game fun and it is even more fun when the group is bigger.")
+        Text("King's Chalice, a.k.a King's Cup or Ring of Fire, is a popular drinking game among students and people who like partying and sleepovers. Having a variation of drinks makes this game fun and it is even more fun when the group is bigger.")
           .font(.title2)
           .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
           .foregroundColor(.white)
@@ -25,7 +25,7 @@ struct GameRulesView: View {
           .multilineTextAlignment(.center)
           .minimumScaleFactor(0.5)
         
-        Text("Every player picks a card and does what the card represents, and it can be anything from choosing someone to take a drink to start a game of categories. When a player draws a king, he pours a quarter of what he is drinking into the middle cup.")
+        Text("Every player picks a card and does what the card represents.  It can be anything from choosing someone to take a drink or starting a game of categories.  When a player draws a king, he pours a quarter of what he is drinking into an empty cup known as the King's Chalice.")
           .font(.title2)
           .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
           .foregroundColor(.white)
@@ -33,7 +33,7 @@ struct GameRulesView: View {
           .multilineTextAlignment(.center)
           .minimumScaleFactor(0.5)
         
-        Text("The game comes to an end when the last king is drawn. The player who draws the last King has to drink the concoction in the King’s cup to the last drop.")
+        Text("The player who draws the last King has to drink the concoction in the King’s Chalice to the last drop.  You could reset the game from there or play on until every card is drawn.")
           .font(.title2)
           .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
           .foregroundColor(.white)

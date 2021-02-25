@@ -12,12 +12,17 @@ struct CardView: View {
   var randomCard: Int
   
   @State private var translation: CGSize = .zero
+  @State private var rotationRight: CGFloat = 0
+  @State private var dontShowSecondCard = false
+  @State private var dontShowFirstCard = false
   
   @EnvironmentObject var usedImages: UsedImages
   
   var card: Card
   var onRemove: (_ card: Card) -> Void
   var thresholdPercentage: CGFloat = 0.5
+  var cardWidth: CGFloat = 300
+  var cardHeight: CGFloat = 450
   
   init(card: Card, randomCard: Int, onRemove: @escaping (_ card: Card) -> Void) {
     self.card = card
@@ -28,18 +33,29 @@ struct CardView: View {
   var body: some View {
     
     GeometryReader { geometry in
+ 
+      let width = geometry.size.width * 0.9
+      let height = width * 1.452
       
       ZStack {
-        Image("cardBack_red4")
+        Image(dontShowSecondCard ? " " : "cardBack_red4")
           .resizable()
-          .frame(width: geometry.size.width * 0.98, height: geometry.size.height * 1.11)
+          .scaledToFit()
+          .rotationEffect(.degrees(Double(self.translation.width / geometry.size.width) * Double.random(in: 9...14)), anchor: .bottom)
+          .frame(width: width, height: height)
         
+        Image(dontShowFirstCard ? " " : "cardBack_red4")
+          .resizable()
+          .scaledToFit()
+          .rotationEffect(.degrees(Double(self.translation.width / geometry.size.width) * Double.random(in: 20...25)), anchor: .bottom)
+          .frame(width: width, height: height)
+      
         VStack(alignment: .center) {
+          
           Image(card.imageAndRules[randomCard].imageName)
             .resizable()
-            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-            .frame(width: geometry.size.width * 0.98, height: geometry.size.height * 1.11)
-      //      .clipped()
+            .scaledToFit()
+            .frame(width: width, height: height)
           
         }
         .background(Color.white)
@@ -66,9 +82,12 @@ struct CardView: View {
             }
         )
       }
-      
     }
-    .padding()
+    .onAppear {
+      self.dontShowSecondCard = usedImages.dontShowSecondCard
+      self.dontShowFirstCard = usedImages.dontShowFirstCard
+    }
+ //   .padding()
   }
   
   ///MARK: FUNCTIONS
@@ -83,6 +102,6 @@ struct CardView_Previews: PreviewProvider {
   static var previews: some View {
     CardView(card: Card(id: 0), randomCard: 0, onRemove: { _ in
       
-    }).frame(height: 480).padding()
+    }).frame(height: 472).padding()
   }
 }

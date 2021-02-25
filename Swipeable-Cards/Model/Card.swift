@@ -32,73 +32,73 @@ class Card: Hashable, Identifiable {
     self.id = id
     
     imageAndRules = [
-                     ImageAndRule(imageName: "jack_of_hearts2", rule: Rules.ruleJack),
-                     ImageAndRule(imageName: "jack_of_clubs2", rule: Rules.ruleJack),
-                     ImageAndRule(imageName: "jack_of_diamonds2", rule: Rules.ruleJack),
-                     ImageAndRule(imageName: "jack_of_spades2", rule: Rules.ruleJack),
+      ImageAndRule(imageName: "jack_of_hearts2", rule: Rules.ruleJack),
+      ImageAndRule(imageName: "jack_of_clubs2", rule: Rules.ruleJack),
+      ImageAndRule(imageName: "jack_of_diamonds2", rule: Rules.ruleJack),
+      ImageAndRule(imageName: "jack_of_spades2", rule: Rules.ruleJack),
       
-                     ImageAndRule(imageName: "3_of_clubs", rule: Rules.rule3),
-                     ImageAndRule(imageName: "3_of_hearts", rule: Rules.rule3),
-                     ImageAndRule(imageName: "3_of_diamonds", rule: Rules.rule3),
-                     ImageAndRule(imageName: "3_of_spades", rule: Rules.rule3),
+      ImageAndRule(imageName: "3_of_clubs", rule: Rules.rule3),
+      ImageAndRule(imageName: "3_of_hearts", rule: Rules.rule3),
+      ImageAndRule(imageName: "3_of_diamonds", rule: Rules.rule3),
+      ImageAndRule(imageName: "3_of_spades", rule: Rules.rule3),
       
-                     ImageAndRule(imageName: "4_of_clubs", rule: Rules.rule4),
-                     ImageAndRule(imageName: "4_of_hearts", rule: Rules.rule4),
-                     ImageAndRule(imageName: "4_of_diamonds", rule: Rules.rule4),
-                     ImageAndRule(imageName: "4_of_spades", rule: Rules.rule4),
+      ImageAndRule(imageName: "4_of_clubs", rule: Rules.rule4),
+      ImageAndRule(imageName: "4_of_hearts", rule: Rules.rule4),
+      ImageAndRule(imageName: "4_of_diamonds", rule: Rules.rule4),
+      ImageAndRule(imageName: "4_of_spades", rule: Rules.rule4),
       
-                     ImageAndRule(imageName: "5_of_clubs", rule: Rules.rule5),
-                     ImageAndRule(imageName: "5_of_hearts", rule: Rules.rule5),
-                     ImageAndRule(imageName: "5_of_diamonds", rule: Rules.rule5),
-                     ImageAndRule(imageName: "5_of_spades", rule: Rules.rule5),
+      ImageAndRule(imageName: "5_of_clubs", rule: Rules.rule5),
+      ImageAndRule(imageName: "5_of_hearts", rule: Rules.rule5),
+      ImageAndRule(imageName: "5_of_diamonds", rule: Rules.rule5),
+      ImageAndRule(imageName: "5_of_spades", rule: Rules.rule5),
       
-                     ImageAndRule(imageName: "6_of_clubs", rule: Rules.rule6),
-                     ImageAndRule(imageName: "6_of_hearts", rule: Rules.rule6),
-                     ImageAndRule(imageName: "6_of_diamonds", rule: Rules.rule6),
-                     ImageAndRule(imageName: "6_of_spades", rule: Rules.rule6),
+      ImageAndRule(imageName: "6_of_clubs", rule: Rules.rule6),
+      ImageAndRule(imageName: "6_of_hearts", rule: Rules.rule6),
+      ImageAndRule(imageName: "6_of_diamonds", rule: Rules.rule6),
+      ImageAndRule(imageName: "6_of_spades", rule: Rules.rule6),
       
-                     ImageAndRule(imageName: "7_of_clubs", rule: Rules.rule7),
-                     ImageAndRule(imageName: "7_of_hearts", rule: Rules.rule7),
-                     ImageAndRule(imageName: "7_of_diamonds", rule: Rules.rule7),
-                     ImageAndRule(imageName: "7_of_spades", rule: Rules.rule7),
+      ImageAndRule(imageName: "7_of_clubs", rule: Rules.rule7),
+      ImageAndRule(imageName: "7_of_hearts", rule: Rules.rule7),
+      ImageAndRule(imageName: "7_of_diamonds", rule: Rules.rule7),
+      ImageAndRule(imageName: "7_of_spades", rule: Rules.rule7),
       
-                     ImageAndRule(imageName: "8_of_clubs", rule: Rules.rule8),
-                     ImageAndRule(imageName: "8_of_hearts", rule: Rules.rule8),
-                     ImageAndRule(imageName: "8_of_diamonds", rule: Rules.rule8),
-                     ImageAndRule(imageName: "8_of_spades", rule: Rules.rule8),
+      ImageAndRule(imageName: "8_of_clubs", rule: Rules.rule8),
+      ImageAndRule(imageName: "8_of_hearts", rule: Rules.rule8),
+      ImageAndRule(imageName: "8_of_diamonds", rule: Rules.rule8),
+      ImageAndRule(imageName: "8_of_spades", rule: Rules.rule8),
       
-                     ImageAndRule(imageName: "9_of_clubs", rule: Rules.rule9),
-                     ImageAndRule(imageName: "9_of_hearts", rule: Rules.rule9),
-                     ImageAndRule(imageName: "9_of_diamonds", rule: Rules.rule9),
-                     ImageAndRule(imageName: "9_of_spades", rule: Rules.rule9),
+      ImageAndRule(imageName: "9_of_clubs", rule: Rules.rule9),
+      ImageAndRule(imageName: "9_of_hearts", rule: Rules.rule9),
+      ImageAndRule(imageName: "9_of_diamonds", rule: Rules.rule9),
+      ImageAndRule(imageName: "9_of_spades", rule: Rules.rule9),
       
-                     ImageAndRule(imageName: "king_of_clubs2", rule: Rules.ruleKing),
-                     ImageAndRule(imageName: "king_of_hearts2", rule: Rules.ruleKing),
-                     ImageAndRule(imageName: "king_of_diamonds2", rule: Rules.ruleKing),
-                     ImageAndRule(imageName: "king_of_spades2", rule: Rules.ruleKing),
+      ImageAndRule(imageName: "king_of_clubs2", rule: Rules.ruleKing),
+      ImageAndRule(imageName: "king_of_hearts2", rule: Rules.ruleKing),
+      ImageAndRule(imageName: "king_of_diamonds2", rule: Rules.ruleKing),
+      ImageAndRule(imageName: "king_of_spades2", rule: Rules.ruleKing),
       
-                     ImageAndRule(imageName: "queen_of_clubs2", rule: Rules.ruleQueen),
-                     ImageAndRule(imageName: "queen_of_hearts2", rule: Rules.ruleQueen),
-                     ImageAndRule(imageName: "queen_of_diamonds2", rule: Rules.ruleQueen),
-                     ImageAndRule(imageName: "queen_of_spades2", rule: Rules.ruleQueen),
+      ImageAndRule(imageName: "queen_of_clubs2", rule: Rules.ruleQueen),
+      ImageAndRule(imageName: "queen_of_hearts2", rule: Rules.ruleQueen),
+      ImageAndRule(imageName: "queen_of_diamonds2", rule: Rules.ruleQueen),
+      ImageAndRule(imageName: "queen_of_spades2", rule: Rules.ruleQueen),
       
-                     ImageAndRule(imageName: "ace_of_spades", rule: Rules.ruleAce),
-                     ImageAndRule(imageName: "ace_of_clubs", rule: Rules.ruleAce),
-                     ImageAndRule(imageName: "ace_of_hearts", rule: Rules.ruleAce),
-                     ImageAndRule(imageName: "ace_of_diamonds", rule: Rules.ruleAce),
+      ImageAndRule(imageName: "ace_of_spades", rule: Rules.ruleAce),
+      ImageAndRule(imageName: "ace_of_clubs", rule: Rules.ruleAce),
+      ImageAndRule(imageName: "ace_of_hearts", rule: Rules.ruleAce),
+      ImageAndRule(imageName: "ace_of_diamonds", rule: Rules.ruleAce),
       
-                     ImageAndRule(imageName: "2_of_clubs", rule: Rules.rule2),
-                     ImageAndRule(imageName: "2_of_hearts", rule: Rules.rule2),
-                     ImageAndRule(imageName: "2_of_spades", rule: Rules.rule2),
-                     ImageAndRule(imageName: "2_of_diamonds", rule: Rules.rule2),
+      ImageAndRule(imageName: "2_of_clubs", rule: Rules.rule2),
+      ImageAndRule(imageName: "2_of_hearts", rule: Rules.rule2),
+      ImageAndRule(imageName: "2_of_spades", rule: Rules.rule2),
+      ImageAndRule(imageName: "2_of_diamonds", rule: Rules.rule2),
       
-                     ImageAndRule(imageName: "10_of_clubs", rule: Rules.rule10),
-                     ImageAndRule(imageName: "10_of_hearts", rule: Rules.rule10),
-                     ImageAndRule(imageName: "10_of_spades", rule: Rules.rule10),
-                     ImageAndRule(imageName: "10_of_diamonds", rule: Rules.rule10)
+      ImageAndRule(imageName: "10_of_clubs", rule: Rules.rule10),
+      ImageAndRule(imageName: "10_of_hearts", rule: Rules.rule10),
+      ImageAndRule(imageName: "10_of_spades", rule: Rules.rule10),
+      ImageAndRule(imageName: "10_of_diamonds", rule: Rules.rule10)
     ]
   }
- 
+  
 }
 
 

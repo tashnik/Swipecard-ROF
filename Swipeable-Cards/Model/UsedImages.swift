@@ -17,6 +17,10 @@ class UsedImages: ObservableObject, Identifiable {
   @Published var images: [String] = []
   @Published var rules: [String] = []
   @Published var kingCount = 0
+  @Published var newRule = ""
+  @Published var useNewRule = false
+  @Published var dontShowFirstCard = false
+  @Published var dontShowSecondCard = false
   
   func addImage(image: String) {
     self.images.append(image)

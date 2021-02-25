@@ -17,7 +17,7 @@ struct GameTabView: View {
         ContentView()
       }
       .tabItem {
-        Image(systemName: "circles.hexagonpath")
+        Image(systemName: "crown")
         Text("Game")
       }
       
