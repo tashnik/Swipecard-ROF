@@ -48,16 +48,16 @@ struct RulesSheetView: View {
         self.emoji = "🗡"
       } else if rule.contains("👸") {
         self.emoji = "👸"
-      } else if rule.contains("🤴") {
-        self.emoji = "🤴"
+      } else if rule.contains("👑") {
+        self.emoji = "👑"
       } else if rule.contains("😳") {
         self.emoji = "😳"
       } else if rule.contains("🎤") {
         self.emoji = "🎤"
       } else if rule.contains("💁‍♀️") {
         self.emoji = "💁‍♀️"
-      } else if rule.contains("🧔") {
-        self.emoji = "🧔"
+      } else if rule.contains("🤴") {
+        self.emoji = "🤴"
       } else if rule.contains("👬") {
         self.emoji = "👬"
       } else if rule.contains("🌊") {
@@ -68,8 +68,8 @@ struct RulesSheetView: View {
         self.emoji = "☁️"
       } else if rule.contains("📣") {
         self.emoji = "📣"
-      } else if rule.contains("🧞‍♂️") {
-        self.emoji = "🧞‍♂️"
+      } else if rule.contains("🤔") {
+        self.emoji = "🤔"
       }
     }
   }

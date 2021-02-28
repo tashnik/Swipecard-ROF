@@ -136,7 +136,7 @@ struct ContentView: View {
             EditRulesView(randomCard: $randomCard, cardImageName: $cardImageName)
           })
          
-        .navigationBarTitle("King's Chalice")
+        .navigationBarTitle("King's Court")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing:
                               Button {

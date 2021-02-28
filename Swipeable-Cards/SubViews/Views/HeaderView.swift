@@ -27,7 +27,7 @@ struct HeaderView: View {
                         .repeatForever(autoreverses: true))
         
         VStack(alignment: .center) {
-          Text("King's Chalice")
+          Text("King's Court")
             .font(.custom("Kefa Regular", size: 24))
             .bold()
             .foregroundColor(.red)
